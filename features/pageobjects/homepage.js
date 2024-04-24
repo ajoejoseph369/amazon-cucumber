@@ -1,8 +1,8 @@
 const {$} = require("@wdio/globals");
 
 const signInbtn = '#nav-link-accountList-nav-line-1';
-// const title = '//title[@dir="ltr"]';
-
+const searchBar = "//input[@id='twotabsearchtextbox']";
+const searchIcon = "//input[@id='nav-search-submit-button']"
 
 class Homepage{
 
@@ -20,6 +20,15 @@ class Homepage{
         else
             return false;
     }
+
+    async searchProduct(product_details){
+        await $(searchBar).setValue(product_details);
+    }
+
+    async clickSearchBtn(){
+        await $(searchIcon).click();
+    }
+
 }
 
 module.exports = new Homepage();

@@ -14,3 +14,13 @@ Feature: Test amazon website functionality
     Examples:
       | username               | password          |
       | ajoejoseph99@gmail.com | iamajoejoseph3426 |
+
+  Scenario: Check if user is able to search for a product
+    Given user is on the homepage
+    When user clicks on the search bar and enters <product_details>
+    And clicks on the search icon
+    Then user is redirected the product listing page
+
+    Examples:
+      | product_details                              |
+      | Apple iPhone 15 Pro (256 GB) - Blue Titanium |
